@@ -2,7 +2,7 @@
 
 from django.contrib import admin
 
-from django_kippo.models import Auth, Clients, Input, Sensors, Sessions, Ttylog
+from django_kippo.models import Auth, Client, Input, Sensor, Session, Ttylog
 
 
 class AuthAdmin(admin.ModelAdmin):
@@ -14,9 +14,9 @@ class AuthAdmin(admin.ModelAdmin):
 admin.site.register(Auth, AuthAdmin)
 
 
-class ClientsAdmin(admin.ModelAdmin):
+class ClientAdmin(admin.ModelAdmin):
     list_display = ("version",)
-admin.site.register(Clients, ClientsAdmin)
+admin.site.register(Client, ClientAdmin)
 
 
 class InputAdmin(admin.ModelAdmin):
@@ -28,20 +28,20 @@ class InputAdmin(admin.ModelAdmin):
 admin.site.register(Input, InputAdmin)
 
 
-class SensorsAdmin(admin.ModelAdmin):
+class SensorAdmin(admin.ModelAdmin):
     list_display = ("id", "ip")
     list_display_links = ("ip",)
     search_fields = ("ip",)
-admin.site.register(Sensors, SensorsAdmin)
+admin.site.register(Sensor, SensorAdmin)
 
 
-class SessionsAdmin(admin.ModelAdmin):
+class SessionAdmin(admin.ModelAdmin):
     list_display = ("id", "ip", "starttime", "endtime", "termsize", "client")
     list_display_links = ("ip",)
     list_filter = ("ip", "client")
     date_hierarchy = "starttime"
     search_fields = ("ip", "client")
-admin.site.register(Sessions, SessionsAdmin)
+admin.site.register(Session, SessionAdmin)
 
 
 class TtylogAdmin(admin.ModelAdmin):
