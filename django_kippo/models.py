@@ -1,13 +1,7 @@
-# This is an auto-generated Django model module.
-# You'll have to do the following manually to clean this up:
-#     * Rearrange models' order
-#     * Make sure each model has one field with primary_key=True
-# Feel free to rename the models, but don't rename db_table values or field names.
-#
-# Also note: You'll have to insert the output of 'django-admin.py sqlcustom [appname]'
-# into your database.
+# coding: utf-8
 
 from django.db import models
+
 
 class Auth(models.Model):
     id = models.IntegerField(primary_key=True)
@@ -16,14 +10,29 @@ class Auth(models.Model):
     username = models.CharField(max_length=300)
     password = models.CharField(max_length=300)
     timestamp = models.DateTimeField()
+
+    def __unicode__(self):
+        result = u"Kippo Auth [%s/%s]" % (self.username, self.password)
+        if self.success == 1:
+            result += " successfully."
+        else:
+            result += " failed."
+        return result
+
     class Meta:
         db_table = u'auth'
+        ordering = ('-timestamp',)
 
 class Clients(models.Model):
     id = models.IntegerField(primary_key=True)
     version = models.CharField(max_length=150)
+
+    def __unicode__(self):
+        return "Client '%s'" % self.version
+
     class Meta:
         db_table = u'clients'
+
 
 class Input(models.Model):
     id = models.IntegerField(primary_key=True)
@@ -35,11 +44,15 @@ class Input(models.Model):
     class Meta:
         db_table = u'input'
 
+
 class Sensors(models.Model):
     id = models.IntegerField(primary_key=True)
     ip = models.CharField(max_length=45)
+    def __unicode__(self):
+        return "IP: %s" % self.ip
     class Meta:
         db_table = u'sensors'
+
 
 class Sessions(models.Model):
     id = models.CharField(max_length=96, primary_key=True)
@@ -51,6 +64,7 @@ class Sessions(models.Model):
     client = models.IntegerField(null=True, blank=True)
     class Meta:
         db_table = u'sessions'
+
 
 class Ttylog(models.Model):
     id = models.IntegerField(primary_key=True)
