@@ -1,0 +1,46 @@
+= django-kippo test project =
+
+Just a minimal test project for **django-kippo**
+
+
+=== 1. setup
+
+Create a "local_settings.py" in /django_kippo_test_project/ and add the
+MySQL Database settings like:
+{{{
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': '192.168.1.1', # MySQL Server Address: https://docs.djangoproject.com/en/1.4/ref/settings/#host
+        'NAME': 'kippo', # MySQL database name
+        'USER': 'kippo', # MySQL user
+        'PASSWORD': 'foobar', # MySQL user password
+    }
+}
+}}}
+See also: https://docs.djangoproject.com/en/1.4/ref/settings/#databases
+
+
+=== 2. init database
+
+{{{
+django_kippo_test_project$ ./manage.py syncdb
+}}}
+
+
+=== 3. run dev. testserver
+
+{{{
+./manage.py runserver --traceback --insecure
+}}}
+
+Or make is public in your net:
+{{{
+./manage.py runserver 0.0.0.0:8000 --traceback --insecure
+}}}
+
+
+== Links
+
+* https://github.com/jedie/django-kippo
+* http://pypi.python.org/pypi/django-kippo/
