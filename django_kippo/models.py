@@ -72,6 +72,8 @@ class Ttylog(models.Model):
     id = models.IntegerField(primary_key=True)
     session = models.ForeignKey("Session", db_column="session")
     ttylog = models.TextField()
+    def __unicode__(self):
+        return "tty log from session %s" % self.session.id
     class Meta:
         db_table = u'ttylog'
 
