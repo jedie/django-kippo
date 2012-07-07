@@ -1,3 +1,25 @@
 == django-kippo
 
-Django App for kippo SSH Honeypot: https://code.google.com/p/kippo/
+Django App for the SSH Honeypot called 'kippo': https://code.google.com/p/kippo/
+
+It's a simple django app thats access to the MySQL data of kippo.
+You can browse to them in the django admin panel.
+
+
+=== test
+
+There exists a test project for easy startup.
+Read: [[https://github.com/jedie/django-kippo/tree/master/django_kippo_test_project|/django_kippo_test_project/README.creole]] for more information.
+
+
+=== cli
+
+Under [[https://github.com/jedie/django-kippo/tree/master/cli_scripts|/cli_scripts/]] are some older commandline scripts.
+
+
+=== Links
+
+| IRC                 | [[http://www.pylucid.org/permalink/304/irc-channel|#pylucid on freenode.net]]
+| Github              | [[http://github.com/jedie/django-kippo]]
+| Python Packages     | [[http://pypi.python.org/pypi/django-kippo/]]
+| kippo homepage      | [[https://code.google.com/p/kippo/]]
