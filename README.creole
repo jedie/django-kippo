@@ -6,6 +6,36 @@ It's a simple django app thats access to the MySQL data of kippo.
 You can browse to them in the django admin panel.
 
 
+=== install
+
+Install some packages:
+{{{
+~$ sudo aptitude install python-virtualenv git-core
+}}}
+* **python-virtualenv**: for creatting virtual environments
+* **git-core**: for install django-kippo as "editable" 
+
+Create a new virtual python environment:
+{{{
+~$ virtualenv django-kippo-env
+}}}
+
+Go into env and activate it:
+{{{
+~$ cd django-kippo-env
+~/django-kippo-env$ source bin/activate
+}}}
+
+Install django-kippo as a editable package:
+{{{
+(django-kippo-env)~/django-kippo-env$ pip install -e git+git://github.com/jedie/django-kippo.git
+}}}
+
+Install Python interface to MySQL:
+{{{
+(django-kippo-env)~/django-kippo-env$ pip install MySQL-python
+}}}
+
 === test
 
 There exists a test project for easy startup.
