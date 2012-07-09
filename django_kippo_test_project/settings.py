@@ -91,7 +91,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    "reversion.middleware.RevisionMiddleware",
     #"django_kippo_test_project.django_kippo_test_app.middleware.QueryLogMiddleware",
 )
 
